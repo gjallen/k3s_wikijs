@@ -1,0 +1,55 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wikijs
+  namespace: wikijs
+  labels:
+    app: wikijs
+spec:
+  selector:
+    matchLabels:
+      app: wikijs
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: wikijs
+    spec:
+      containers:
+      - name: wikijs
+        image: requarks/wiki:2
+        ports:
+        - containerPort: 3000
+          protocol: TCP
+        env:
+          - name: DB_HOST
+            valueFrom:
+              secretKeyRef:
+                name: wikijssecrets
+                key: DB_HOST
+          - name: DB_PORT
+            valueFrom:
+              secretKeyRef:
+                name: wikijssecrets
+                key: DB_PORT
+          - name: DB_USER
+            valueFrom:
+              secretKeyRef:
+                name: wikijssecrets
+                key: DB_USER
+          - name: DB_TYPE
+            valueFrom:
+              secretKeyRef:
+                name: wikijssecrets  
+                key: DB_TYPE
+          - name: DB_NAME
+            valueFrom:
+              secretKeyRef:
+                name: wikijssecrets  
+                key: DB_NAME
+          - name: DB_PASS
+            valueFrom:
+              secretKeyRef:
+                name: wikijsecrets
+                key: DB_PASSWORD
