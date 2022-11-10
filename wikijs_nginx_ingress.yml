@@ -11,7 +11,10 @@ spec:
     http:
       paths:
       - path: /
+        pathType: Prefix
         backend:
           service:
-            serviceName: wikijs-svc
-            servicePort: 80
+            service:
+              name: wikijs-svc
+              port: 
+                number: 80
