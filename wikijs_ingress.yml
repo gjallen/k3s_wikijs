@@ -10,7 +10,7 @@ metadata:
 
 spec:
   rules:
-  - host: {{env "INGRESS_HOST"}}
+  - host: wiki.darkleafygreens.com
     http:
       paths:
       - path: /
