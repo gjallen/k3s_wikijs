@@ -1,1 +1,1 @@
-# k3s_deploy_wiki.js
+# k3s_wikijs
