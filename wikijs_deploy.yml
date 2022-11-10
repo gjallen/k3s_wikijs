@@ -51,5 +51,5 @@ spec:
           - name: DB_PASS
             valueFrom:
               secretKeyRef:
-                name: wikijsecrets
+                name: wikijssecrets
                 key: DB_PASSWORD
