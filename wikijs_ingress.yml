@@ -4,10 +4,6 @@ kind: Ingress
 metadata:
   name: wikijs-ingress
   namespace: wikijs
-  annotations:
-    kubernetes.io/ingress.class: "traefik"
-    traefik.ingress.kubernetes.io/frontend-entry-points: http,https
-
 spec:
   rules:
   - host: wiki.darkleafygreens.com
